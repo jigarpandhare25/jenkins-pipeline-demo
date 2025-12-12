@@ -4,10 +4,12 @@ pipeline {
     stages {
 
         stage('Checkout Code') {
-            steps {
-                git branch: 'main', url: 'https://github.com/jigarpandhare25/jenkins-desktop-prac.git'
-            }
-        }
+    steps {
+        git branch: 'main',
+            credentialsId: 'github-token',
+            url: 'https://github.com/jigarpandhare25/jenkins-desktop-prac.git'
+    }
+}
 
         stage('Build Docker Image') {
             steps {
