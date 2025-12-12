@@ -4,13 +4,12 @@ pipeline {
     stages {
 
         stage('Checkout Code') {
-    steps {
-        git branch: 'main',
-            credentialsId: 'github-token',
-            url: 'https://github.com/jigarpandhare25/jenkins-pipeline-demo
-.git'
-    }
-}
+            steps {
+                git branch: 'main',
+                    credentialsId: 'github-token',
+                    url: 'https://github.com/jigarpandhare25/jenkins-pipeline-demo.git'
+            }
+        }
 
         stage('Build Docker Image') {
             steps {
@@ -24,7 +23,7 @@ pipeline {
         stage('Stop Old Container') {
             steps {
                 script {
-                    echo "Stopping old container if exists..."
+                    echo 'Stopping old container if exists...'
                     bat "docker stop flaskdemo || exit 0"
                     bat "docker rm flaskdemo || exit 0"
                 }
@@ -59,6 +58,3 @@ pipeline {
         }
     }
 }
-
-
-
