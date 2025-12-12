@@ -7,7 +7,8 @@ pipeline {
     steps {
         git branch: 'main',
             credentialsId: 'github-token',
-            url: 'https://github.com/jigarpandhare25/jenkins-desktop-prac.git'
+            url: 'https://github.com/jigarpandhare25/jenkins-pipeline-demo
+.git'
     }
 }
 
